@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 
 const RETRATO: Photo[] = [
-  { src: null, label: "Retrato", caption: "[placeholder] legenda" },
+  { src: "/gallery/Rodrigo-3.jpg", label: "Retrato" },
 ];
 
 export default function Sobre() {
@@ -10,27 +10,49 @@ export default function Sobre() {
     <>
       <section className="block" style={{ paddingTop: "4rem" }}>
         <div className="container">
-          <span className="eyebrow">A2 — Sobre</span>
+          <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <span className="nav-dot" aria-hidden="true" /> Sobre
+          </span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginTop: "0.5rem" }}>
-            [placeholder] Título curto da bio
+            Duas décadas de música, muitos palcos
           </h1>
 
           <div className="split-block" style={{ marginTop: "2.5rem" }}>
             <PhotoGrid photos={RETRATO} />
             <div>
               <p>
-                [placeholder] Parágrafo 1 — como começou na música: primeiro
-                instrumento, primeira banda, o momento em que decidiu que
-                isso seria sério.
+                Rodrigo Tavares é cantor, compositor e instrumentista, com
+                mais de duas décadas de música nas costas. Começou em Juiz
+                de Fora (MG), sua cidade natal, integrando a banda Etanoise
+                e assinando composições do primeiro disco do grupo — foi
+                ali que deu os primeiros passos como compositor.
               </p>
               <p className="text-muted">
-                [placeholder] Parágrafo 2 — o que te influencia hoje:
-                artistas, gêneros, cenas. O que você está tentando dizer com
-                o que faz.
+                Desde 2006 vive e toca em Belo Horizonte. Passou pela
+                Radiotape, ainda no início da banda, e depois assumiu baixo
+                e voz no Cevada Blues, unindo repertório instrumental à
+                interpretação e à presença de palco. Ao longo do caminho,
+                foi se firmando no pop rock brasileiro e internacional —
+                principalmente aquelas músicas que atravessam dos anos 1970
+                aos 2000 — sempre transitando entre bandas e formatos
+                diferentes.
               </p>
               <p className="text-muted">
-                [placeholder] Parágrafo 3 — onde as pessoas podem te
-                encontrar tocando ou ouvir seu trabalho mais recente.
+                Hoje toca ao lado de Rafael Oliveira no duo Os Inoxidáveis,
+                revisitando clássicos da música brasileira e internacional
+                em apresentações pensadas pra criar interação com o público
+                e aquele clima de música ao vivo de verdade.
+              </p>
+              <p className="text-muted">
+                Desde que chegou a BH, já passou pelos principais palcos da
+                noite da cidade — Jack Rock Bar, The Bridge Pub, 100%
+                Malte, StoneHenge, Underground Pub — construindo uma
+                relação de anos com o circuito de bares e casas de show.
+              </p>
+              <p className="text-muted">
+                Bandas, fases e estilos mudaram ao longo do tempo, mas uma
+                coisa ficou igual: a paixão por uma boa canção e pela
+                conexão que ela cria com quem está ouvindo.
               </p>
             </div>
           </div>

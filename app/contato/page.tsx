@@ -5,7 +5,9 @@ export default function Contato() {
     <>
       <section className="block" style={{ paddingTop: "4rem" }}>
         <div className="container">
-          <span className="eyebrow">A5 — Contato</span>
+          <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <span className="nav-dot" aria-hidden="true" /> Contato
+          </span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginTop: "0.5rem" }}>
             Fale comigo
           </h1>
