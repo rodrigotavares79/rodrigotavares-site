@@ -218,6 +218,317 @@ section.block:last-of-type {
   margin-top: 0.5rem;
 }
 
+/* --- Carrossel de fotos (hero) --- */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
+  overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--surface),
+      var(--surface) 12px,
+      var(--surface-raised) 12px,
+      var(--surface-raised) 24px
+    );
+}
+
+.carousel-placeholder .index {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--text);
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  background: rgba(20, 17, 14, 0.6);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 17, 14, 0.5);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  z-index: 2;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(20, 17, 14, 0.8);
+  border-color: var(--accent);
+}
+
+.carousel-arrow.prev {
+  left: 1rem;
+}
+
+.carousel-arrow.next {
+  right: 1rem;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 40rem) {
+  .carousel {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+}
+
+/* --- Galeria de fotos em grade --- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 14rem;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.photo-tile {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.photo-tile.tall {
+  grid-row: span 2;
+}
+
+.photo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--surface),
+      var(--surface) 12px,
+      var(--surface-raised) 12px,
+      var(--surface-raised) 24px
+    );
+}
+
+.photo-placeholder .index {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.photo-tile figcaption {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  background: rgba(20, 17, 14, 0.6);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 40rem) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 10rem;
+  }
+}
+
+/* --- Seção imagem + texto lado a lado --- */
+
+.split-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split-block .photo-tile {
+  aspect-ratio: 4 / 5;
+  height: auto;
+}
+
+@media (max-width: 48rem) {
+  .split-block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --- Barra de estatísticas (sob o carrossel) --- */
+
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-bar .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.stat {
+  text-align: left;
+}
+
+.stat .value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+
+.stat .label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 40rem) {
+  .stats-bar .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Carrossel horizontal de lançamentos --- */
+
+.release-scroller {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.release-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+
+.release-scroller::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.release-card {
+  flex: 0 0 11rem;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.release-card h3 {
+  color: var(--text);
+}
+
+/* --- Seção Spotify --- */
+
+.spotify-block {
+  background: var(--surface);
+}
+
+.spotify-embed {
+  margin-top: 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.spotify-embed iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
 /* --- Grid de faixas / cards --- */
 
 .grid {

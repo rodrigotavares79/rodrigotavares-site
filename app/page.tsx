@@ -1,23 +1,54 @@
 import Footer from "@/components/Footer";
+import Carousel, { Slide } from "@/components/Carousel";
+import PhotoGrid, { Photo } from "@/components/PhotoGrid";
+import ReleaseScroller, { Release } from "@/components/ReleaseScroller";
+
+// [placeholder] Troque "src: null" por "src: '/gallery/nome-do-arquivo.jpg'"
+// assim que colocar as fotos reais dentro de public/gallery/.
+const SLIDES: Slide[] = [
+  { src: null, label: "Foto 1", caption: "[placeholder] legenda curta" },
+  { src: null, label: "Foto 2", caption: "[placeholder] legenda curta" },
+  { src: null, label: "Foto 3", caption: "[placeholder] legenda curta" },
+];
+
+// [placeholder] Ajuste os números reais — anos de carreira, shows, etc.
+const STATS = [
+  { value: "0", label: "[placeholder] anos de carreira" },
+  { value: "0", label: "[placeholder] shows realizados" },
+  { value: "0", label: "[placeholder] faixas lançadas" },
+  { value: "0", label: "[placeholder] estatística livre" },
+];
+
+const LANCAMENTOS: Release[] = [
+  { index: "B1", titulo: "[placeholder] Faixa 1", tipo: "Single", ano: "2026", href: "#" },
+  { index: "B2", titulo: "[placeholder] Faixa 2", tipo: "Single", ano: "2025", href: "#" },
+  { index: "B3", titulo: "[placeholder] Faixa 3", tipo: "EP", ano: "2025", href: "#" },
+  { index: "B4", titulo: "[placeholder] Faixa 4", tipo: "Single", ano: "2024", href: "#" },
+];
+
+const DESTAQUES: Photo[] = [
+  { src: null, label: "Foto A", tall: true },
+  { src: null, label: "Foto B" },
+  { src: null, label: "Foto C" },
+  { src: null, label: "Foto D" },
+  { src: null, label: "Foto E" },
+];
 
 export default function Home() {
   return (
     <>
-      <section className="hero">
+      <Carousel slides={SLIDES} />
+
+      <div className="stats-bar">
         <div className="container">
-          <span className="eyebrow">A1 — Início</span>
-          <h1>Rodrigo Tavares</h1>
-          <p className="lede">
-            [placeholder] Uma frase curta que diga quem você é como músico — o
-            que você toca, o estilo, e o que faz alguém querer ouvir a próxima
-            faixa.
-          </p>
-          <div className="hero-actions">
-            <a href="/musica" className="btn btn-primary">Ouvir faixas</a>
-            <a href="/contato" className="btn btn-ghost">Contato</a>
-          </div>
+          {STATS.map((stat, i) => (
+            <div className="stat" key={i}>
+              <span className="value">{stat.value}</span>
+              <span className="label">{stat.label}</span>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
 
       <div className="now-spinning">
         <div className="container">
@@ -30,17 +61,58 @@ export default function Home() {
 
       <section className="block">
         <div className="container">
-          <span className="eyebrow">A2 — Sobre</span>
-          <h2>[placeholder] Uma linha de abertura sobre sua trajetória</h2>
-          <p className="text-muted" style={{ maxWidth: "40rem", marginTop: "1rem" }}>
-            [placeholder] Dois ou três parágrafos de bio resumida vão aqui,
-            com um link para a página /sobre completa. Fale sobre como
-            começou, o que te move como músico hoje, e o que as pessoas podem
-            esperar ao te ouvir.
+          <span className="eyebrow">A1 — Início</span>
+          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", marginTop: "0.5rem" }}>
+            Rodrigo Tavares
+          </h1>
+          <p className="lede" style={{ marginTop: "1rem" }}>
+            [placeholder] Uma frase curta que diga quem você é como músico —
+            o que você toca, o estilo, e o que faz alguém querer ouvir a
+            próxima faixa.
           </p>
-          <a href="/sobre" className="btn btn-ghost" style={{ display: "inline-block", marginTop: "1.5rem" }}>
-            Ler bio completa
+          <div className="hero-actions">
+            <a href="/musica" className="btn btn-primary">Ouvir faixas</a>
+            <a href="/contato" className="btn btn-ghost">Contato</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="block">
+        <div className="container">
+          <span className="eyebrow">Novidades</span>
+          <h2>Últimos lançamentos</h2>
+          <ReleaseScroller releases={LANCAMENTOS} />
+          <a href="/musica" className="btn btn-ghost" style={{ display: "inline-block", marginTop: "1.5rem" }}>
+            Ver todos
           </a>
+        </div>
+      </section>
+
+      <section className="block spotify-block">
+        <div className="container">
+          <span className="eyebrow">Discografia</span>
+          <h2>Ouça agora no Spotify</h2>
+          {/*
+            [placeholder] Troque SEU_ID_DE_ARTISTA pelo ID real do seu
+            perfil no Spotify (aparece no link "Compartilhar > Copiar link
+            do artista": open.spotify.com/artist/ESSE_ID).
+          */}
+          <div className="spotify-embed">
+            <iframe
+              src="https://open.spotify.com/embed/artist/SEU_ID_DE_ARTISTA"
+              height="352"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="block">
+        <div className="container">
+          <span className="eyebrow">Em cena</span>
+          <h2>Galeria</h2>
+          <PhotoGrid photos={DESTAQUES} />
         </div>
       </section>
 

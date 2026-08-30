@@ -18,6 +18,9 @@ Abre em http://localhost:3000
 - app/contato/page.tsx     → contato
 - components/              → Nav e Footer compartilhados
 - app/globals.css          → tokens de design (cores, tipografia)
+- components/Carousel.tsx  → carrossel de fotos usado na home
+- components/PhotoGrid.tsx → galeria em grade usada em /sobre e /musica
+- public/gallery/          → onde colocar as fotos reais (veja o README lá dentro)
 
 ## O que ainda precisa ser preenchido
 

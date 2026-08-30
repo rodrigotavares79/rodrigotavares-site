@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 
 const FAIXAS = [
   {
@@ -27,6 +28,15 @@ const FAIXAS = [
   },
 ];
 
+const GALERIA: Photo[] = [
+  { src: null, label: "Foto 1", tall: true },
+  { src: null, label: "Foto 2" },
+  { src: null, label: "Foto 3" },
+  { src: null, label: "Foto 4" },
+  { src: null, label: "Foto 5" },
+  { src: null, label: "Foto 6" },
+];
+
 export default function Musica() {
   return (
     <>
@@ -37,13 +47,18 @@ export default function Musica() {
             Faixas
           </h1>
           <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
-            [placeholder] Substitua os cards abaixo pelas suas faixas reais,
-            com links para Spotify, YouTube ou onde estiverem publicadas.
+            [placeholder] Cada card abaixo é pensado pra ter uma foto de capa
+            — troque o bloco de placeholder por &lt;img src="/gallery/..."&gt;
+            assim que tiver a arte de cada faixa.
           </p>
 
           <div className="grid">
             {FAIXAS.map((faixa) => (
               <div className="card" key={faixa.index}>
+                <div className="photo-placeholder" style={{ aspectRatio: "1 / 1", marginBottom: "1rem" }}>
+                  <span className="index">{faixa.index}</span>
+                  <span className="text-muted">[placeholder] capa</span>
+                </div>
                 <span className="index">{faixa.index} · {faixa.ano}</span>
                 <h3>{faixa.titulo}</h3>
                 <p>{faixa.descricao}</p>
@@ -56,6 +71,15 @@ export default function Musica() {
           </div>
         </div>
       </section>
+
+      <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="container">
+          <span className="eyebrow">Galeria</span>
+          <h2>Fotos oficiais</h2>
+          <PhotoGrid photos={GALERIA} />
+        </div>
+      </section>
+
       <Footer />
     </>
   );
