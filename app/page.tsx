@@ -3,12 +3,12 @@ import Carousel, { Slide } from "@/components/Carousel";
 import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 import ReleaseScroller, { Release } from "@/components/ReleaseScroller";
 
-// [placeholder] Troque "src: null" por "src: '/gallery/nome-do-arquivo.jpg'"
-// assim que colocar as fotos reais dentro de public/gallery/.
+// Fotos reais em public/gallery/. Adicione "caption" em cada slide se
+// quiser uma legenda por baixo da foto (ex: local, data, nome do show).
 const SLIDES: Slide[] = [
-  { src: null, label: "Foto 1", caption: "[placeholder] legenda curta" },
-  { src: null, label: "Foto 2", caption: "[placeholder] legenda curta" },
-  { src: null, label: "Foto 3", caption: "[placeholder] legenda curta" },
+  { src: "/gallery/Rodrigo-1.jpg", label: "Foto 1" },
+  { src: "/gallery/Rodrigo-2.jpg", label: "Foto 2" },
+  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 3" },
 ];
 
 // [placeholder] Ajuste os números reais — anos de carreira, shows, etc.
