@@ -50,16 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="now-spinning">
-        <div className="container">
-          <span>No ar agora:</span>
-          <strong>Boletim Musical</strong>
-          <span className="text-muted">— resumo semanal de notícias de música</span>
-          <a href="https://lab.rodrigotavares.com.br/boletim">assistir →</a>
-        </div>
-      </div>
-
-      <section className="block">
+       <section className="block">
         <div className="container">
           <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span className="nav-dot" aria-hidden="true" /> Início
