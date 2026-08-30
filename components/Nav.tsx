@@ -22,7 +22,7 @@ export default function Nav() {
           href={track.href}
           aria-current={pathname === track.href ? "page" : undefined}
         >
-          <span className="index">{track.index}</span>
+          <span className="nav-dot" aria-hidden="true" />
           {track.label}
         </Link>
       ))}
