@@ -102,6 +102,13 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
+.tracklist-nav .nav-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
 /* --- Header --- */
 
 .site-header {
