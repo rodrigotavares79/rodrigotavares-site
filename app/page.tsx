@@ -8,7 +8,7 @@ import ReleaseScroller, { Release } from "@/components/ReleaseScroller";
 const SLIDES: Slide[] = [
   { src: "/gallery/Rodrigo-1.jpg", label: "Foto 1" },
   { src: "/gallery/Rodrigo-2.jpg", label: "Foto 2" },
-  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 3" },
+  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 3", fit: "contain" },
 ];
 
 // [placeholder] Ajuste os números reais — anos de carreira, shows, etc.
@@ -20,10 +20,33 @@ const STATS = [
 ];
 
 const LANCAMENTOS: Release[] = [
-  { index: "B1", titulo: "[placeholder] Faixa 1", tipo: "Single", ano: "2026", href: "#" },
-  { index: "B2", titulo: "[placeholder] Faixa 2", tipo: "Single", ano: "2025", href: "#" },
-  { index: "B3", titulo: "[placeholder] Faixa 3", tipo: "EP", ano: "2025", href: "#" },
-  { index: "B4", titulo: "[placeholder] Faixa 4", tipo: "Single", ano: "2024", href: "#" },
+  {
+    index: "B1",
+    titulo: "Bem Vinda Noite",
+    tipo: "Faixa",
+    ano: "2006",
+    href: "https://open.spotify.com/intl-pt/track/7GiCPhwCKCQtoNEVLGwa2f?si=3d8079a7460a49ce",
+    creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+  },
+  {
+    index: "B2",
+    titulo: "Podemos Viver Mais",
+    tipo: "Faixa",
+    ano: "2006",
+    href: "https://open.spotify.com/intl-pt/track/4DxrvdUqITglAjDpuvhr10?si=2a52fe621ac44817",
+    creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+  },
+  {
+    index: "B3",
+    titulo: "Meu Tempo É Você",
+    tipo: "Faixa",
+    ano: "2006",
+    href: "https://open.spotify.com/intl-pt/track/1QwrxskAppqO6ezYhf7ZQN?si=4b8a67b2125a47dc",
+    creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+  },
 ];
 
 const DESTAQUES: Photo[] = [
@@ -50,7 +73,7 @@ export default function Home() {
         </div>
       </div>
 
-       <section className="block">
+      <section className="block">
         <div className="container">
           <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span className="nav-dot" aria-hidden="true" /> Início

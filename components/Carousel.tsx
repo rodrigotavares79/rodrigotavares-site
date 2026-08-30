@@ -9,6 +9,9 @@ export type Slide = {
   src: string | null;
   label: string;
   caption?: string;
+  // "contain" faz a foto inteira aparecer, sem cortar nada (útil pra fotos
+  // muito verticais); o padrão "cover" preenche o quadro cortando as bordas.
+  fit?: "cover" | "contain";
 };
 
 export default function Carousel({
@@ -52,7 +55,11 @@ export default function Carousel({
           >
             {slide.src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={slide.src} alt={slide.caption ?? slide.label} />
+              <img
+                src={slide.src}
+                alt={slide.caption ?? slide.label}
+                style={slide.fit === "contain" ? { objectFit: "contain" } : undefined}
+              />
             ) : (
               <div className="carousel-placeholder">
                 <span className="index">{slide.label}</span>
