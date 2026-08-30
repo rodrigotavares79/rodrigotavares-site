@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 
 const RETRATO: Photo[] = [
-  { src: null, label: "Retrato", caption: "[placeholder] legenda" },
+  { src: "/gallery/Rodrigo-3.jpg", label: "Retrato" },
 ];
 
 export default function Sobre() {
