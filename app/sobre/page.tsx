@@ -14,7 +14,7 @@ export default function Sobre() {
             <span className="nav-dot" aria-hidden="true" /> Sobre
           </span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginTop: "0.5rem" }}>
-            Duas décadas de música, muitos palcos
+            Pop and Roll!
           </h1>
 
           <div className="split-block" style={{ marginTop: "2.5rem" }}>
