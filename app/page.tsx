@@ -12,7 +12,7 @@ export default function Sobre() {
         <div className="container">
           <span className="eyebrow">A2 — Sobre</span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginTop: "0.5rem" }}>
-            Duas décadas de música, muitos palcos
+            Pop and Roll !
           </h1>
 
           <div className="split-block" style={{ marginTop: "2.5rem" }}>
@@ -20,7 +20,7 @@ export default function Sobre() {
             <div>
               <p>
                 Rodrigo Tavares é cantor, compositor e instrumentista, com
-                mais de duas décadas de música nas costas. Começou em Juiz
+                mais de duas décadas de música no currículo. Começou em Juiz
                 de Fora (MG), sua cidade natal, integrando a banda Etanoise
                 e assinando composições do primeiro disco do grupo — foi
                 ali que deu os primeiros passos como compositor.
