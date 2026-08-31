@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 
 const FAIXAS = [
   {
@@ -28,12 +27,31 @@ const FAIXAS = [
   },
 ];
 
-const GALERIA: Photo[] = [
-  { src: "/gallery/Rodrigo-1.jpg", label: "Foto 1" },
-  { src: "/gallery/Rodrigo-2.jpg", label: "Foto 2" },
-  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 4" },
-  { src: "/gallery/Rodrigo-6.jpg", label: "Foto 6", tall: true },
-  { src: "/gallery/Rodrigo-8.jpg", label: "Foto 8" },
+const FAIXAS_SOUNDCLOUD = [
+  {
+    index: "C1",
+    titulo: "Knockin' on Heaven's Door",
+    ano: "2020",
+    descricao: "Os Inoxidáveis — Rodrigo Tavares",
+    capa: "/gallery/os-inoxidaveis-capa.jpg",
+    soundcloud: "https://soundcloud.com/osinoxidaveis/knockin-on-heavens-door",
+  },
+  {
+    index: "C2",
+    titulo: "Something",
+    ano: "2020",
+    descricao: "Os Inoxidáveis — Rodrigo Tavares (voz), Rafael Oliveira (violão e guitarra)",
+    capa: "/gallery/os-inoxidaveis-capa.jpg",
+    soundcloud: "https://soundcloud.com/osinoxidaveis/something",
+  },
+  {
+    index: "C3",
+    titulo: "I Wanna Hold Your Hand",
+    ano: "2013",
+    descricao: "Os Inoxidáveis — Rodrigo Tavares (voz), Francis Magalhães (violão, baixo, percussão e backing vocals)",
+    capa: "/gallery/os-inoxidaveis-capa.jpg",
+    soundcloud: "https://soundcloud.com/osinoxidaveis/i-wanna-hold-your-hand",
+  },
 ];
 
 export default function Musica() {
@@ -76,8 +94,32 @@ export default function Musica() {
 
       <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <span className="eyebrow">Galeria</span>
-          <PhotoGrid photos={GALERIA} />
+          <span className="eyebrow">Regravações</span>
+          <h2>No Soundcloud</h2>
+          <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
+            Os Inoxidáveis
+          </p>
+
+          <div className="grid">
+            {FAIXAS_SOUNDCLOUD.map((faixa) => (
+              <div className="card" key={faixa.index}>
+                <div style={{ aspectRatio: "1 / 1", overflow: "hidden", borderRadius: "2px", marginBottom: "1rem" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={faixa.capa}
+                    alt={faixa.titulo}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </div>
+                <span className="index">{faixa.ano}</span>
+                <h3>{faixa.titulo}</h3>
+                <p>{faixa.descricao}</p>
+                <div className="links">
+                  <a href={faixa.soundcloud} target="_blank" rel="noopener noreferrer">Soundcloud</a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

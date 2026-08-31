@@ -5,6 +5,14 @@ const RETRATO: Photo[] = [
   { src: "/gallery/Rodrigo-3.jpg", label: "Retrato" },
 ];
 
+const GALERIA: Photo[] = [
+  { src: "/gallery/Rodrigo-1.jpg", label: "Foto 1" },
+  { src: "/gallery/Rodrigo-2.jpg", label: "Foto 2" },
+  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 4" },
+  { src: "/gallery/Rodrigo-6.jpg", label: "Foto 6", tall: true },
+  { src: "/gallery/Rodrigo-8.jpg", label: "Foto 8" },
+];
+
 export default function Sobre() {
   return (
     <>
@@ -57,6 +65,14 @@ export default function Sobre() {
           </div>
         </div>
       </section>
+
+      <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="container">
+          <span className="eyebrow">Galeria</span>
+          <PhotoGrid photos={GALERIA} />
+        </div>
+      </section>
+
       <Footer />
     </>
   );
