@@ -28,20 +28,19 @@ export default function Sobre() {
                 ali que deu os primeiros passos como compositor.
               </p>
               <p className="text-muted">
-                Desde 2006 vive e toca em Belo Horizonte. Passou pela
-                Radiotape, ainda no início da banda, e depois assumiu baixo
-                e voz no Cevada Blues, unindo repertório instrumental à
-                interpretação e à presença de palco. Ao longo do caminho,
-                foi se firmando no pop rock brasileiro e internacional —
+                Desde 2006 vive e toca em Belo Horizonte. Passou pela banda
+                indie Radiotape, ainda no seu início, e depois assumiu
+                baixo e voz no Cevada Blues. Ao longo do caminho, foi se
+                firmando no pop rock brasileiro e internacional —
                 principalmente aquelas músicas que atravessam dos anos 1970
                 aos 2000 — sempre transitando entre bandas e formatos
                 diferentes.
               </p>
               <p className="text-muted">
-                Hoje toca ao lado de Rafael Oliveira no duo Os Inoxidáveis,
-                revisitando clássicos da música brasileira e internacional
-                em apresentações pensadas pra criar interação com o público
-                e aquele clima de música ao vivo de verdade.
+                Em 2008 montou o projeto "Rock and Roll de Boteco" com
+                Rafael Oliveira no duo Os Inoxidáveis, revisitando
+                clássicos da música brasileira e internacional em
+                apresentações com roupagem criativa e original.
               </p>
               <p className="text-muted">
                 Desde que chegou a BH, já passou pelos principais palcos da
@@ -50,9 +49,9 @@ export default function Sobre() {
                 relação de anos com o circuito de bares e casas de show.
               </p>
               <p className="text-muted">
-                Bandas, fases e estilos mudaram ao longo do tempo, mas uma
-                coisa ficou igual: a paixão por uma boa canção e pela
-                conexão que ela cria com quem está ouvindo.
+                Além dos reconhecidos palcos e casas da capital mineira,
+                Rodrigo Tavares também se apresenta em festas particulares
+                e eventos diversos.
               </p>
             </div>
           </div>

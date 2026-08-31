@@ -8,7 +8,8 @@ const TRACKS = [
   { index: "A2", label: "Sobre", href: "/sobre" },
   { index: "A3", label: "Música", href: "/musica" },
   { index: "A4", label: "Shows", href: "/shows" },
-  { index: "A5", label: "Contato", href: "/contato" },
+  { index: "A5", label: "Da Plateia", href: "/da-plateia" },
+  { index: "A6", label: "Contato", href: "/contato" },
 ];
 
 export default function Nav() {

@@ -62,7 +62,7 @@ export default function Musica() {
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
-                <span className="index">{faixa.index} · {faixa.ano}</span>
+                <span className="index">{faixa.ano}</span>
                 <h3>{faixa.titulo}</h3>
                 <p>{faixa.descricao}</p>
                 <div className="links">
@@ -77,7 +77,6 @@ export default function Musica() {
       <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
           <span className="eyebrow">Galeria</span>
-          <h2>Fotos oficiais</h2>
           <PhotoGrid photos={GALERIA} />
         </div>
       </section>
