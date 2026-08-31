@@ -683,6 +683,30 @@ form.contact-form {
   outline-offset: 1px;
 }
 
+.form-feedback {
+  font-size: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 3px;
+  line-height: 1.5;
+}
+
+.form-feedback-success {
+  background: rgba(232, 163, 61, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+.form-feedback-error {
+  background: rgba(139, 42, 42, 0.15);
+  border: 1px solid var(--accent-deep);
+  color: var(--text);
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .contact-links {
   margin-top: 3rem;
   display: flex;
