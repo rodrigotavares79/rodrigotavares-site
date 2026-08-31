@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Rodrigo Tavares",
-  description: "[placeholder] Ajuste esta descrição — resumo de uma linha sobre o trabalho como músico.",
+  description: "Rodrigo Tavares — Pop and Roll de Boteco - Belo Horizonte, MG",
 };
 
 export default function RootLayout({
