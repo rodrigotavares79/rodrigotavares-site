@@ -1,6 +1,48 @@
+"use client";
+
+import { useState, FormEvent } from "react";
 import Footer from "@/components/Footer";
 
 export default function Contato() {
+  const [enviando, setEnviando] = useState(false);
+  const [enviado, setEnviado] = useState(false);
+  const [erro, setErro] = useState<string | null>(null);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setErro(null);
+    setEnviado(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      nome: formData.get("nome"),
+      email: formData.get("email"),
+      mensagem: formData.get("mensagem"),
+    };
+
+    setEnviando(true);
+    try {
+      const res = await fetch("/api/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Não foi possível enviar sua mensagem.");
+      }
+
+      setEnviado(true);
+      form.reset();
+    } catch (err) {
+      setErro(err instanceof Error ? err.message : "Erro ao enviar.");
+    } finally {
+      setEnviando(false);
+    }
+  }
+
   return (
     <>
       <section className="block" style={{ paddingTop: "4rem" }}>
@@ -15,12 +57,7 @@ export default function Contato() {
             Para shows, parcerias ou só para dizer oi, me envie uma mensagem.
           </p>
 
-          {/*
-            [placeholder] Este formulário ainda não envia nada — é preciso
-            ligar a um serviço (ex: Formspree, Resend, ou uma rota de API do
-            próprio Next.js) antes de publicar.
-          */}
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="nome">Nome</label>
               <input id="nome" name="nome" type="text" required />
@@ -33,9 +70,20 @@ export default function Contato() {
               <label htmlFor="mensagem">Mensagem</label>
               <textarea id="mensagem" name="mensagem" rows={5} required />
             </div>
-            <button type="submit" className="btn btn-primary" style={{ alignSelf: "flex-start" }}>
-              Enviar
+            <button type="submit" className="btn btn-primary" style={{ alignSelf: "flex-start" }} disabled={enviando}>
+              {enviando ? "Enviando..." : "Enviar"}
             </button>
+
+            {enviado && (
+              <div className="form-feedback form-feedback-success">
+                Mensagem enviada com sucesso! Retorno em breve.
+              </div>
+            )}
+            {erro && (
+              <div className="form-feedback form-feedback-error">
+                Não foi possível enviar: {erro}
+              </div>
+            )}
           </form>
 
           <div className="contact-links">
