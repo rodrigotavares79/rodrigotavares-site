@@ -36,7 +36,7 @@ export default function RootLayout({
       <body>
         <header className="site-header">
           <div className="container">
-          <a href="/" className="wordmark">Rodrigo Tavares</a>
+            <a href="/" className="wordmark">Rodrigo Tavares</a>
             <Nav />
           </div>
         </header>

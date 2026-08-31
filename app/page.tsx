@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Carousel slides={SLIDES} />
-      <Footer />
+      <Footer hideNav />
     </>
   );
 }

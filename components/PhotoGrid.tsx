@@ -4,6 +4,9 @@ export type Photo = {
   caption?: string;
   // "tall" faz a foto ocupar duas linhas na grade — útil pra variar o ritmo visual.
   tall?: boolean;
+  // "contain" mostra a foto inteira, sem cortar (útil pra fotos muito
+  // verticais/horizontais que ficam ruins com o corte padrão).
+  fit?: "cover" | "contain";
 };
 
 export default function PhotoGrid({ photos }: { photos: Photo[] }) {
@@ -13,7 +16,11 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
         <figure className={`photo-tile ${photo.tall ? "tall" : ""}`} key={i}>
           {photo.src ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={photo.src} alt={photo.caption ?? photo.label} />
+            <img
+              src={photo.src}
+              alt={photo.caption ?? photo.label}
+              style={photo.fit === "contain" ? { objectFit: "contain" } : undefined}
+            />
           ) : (
             <div className="photo-placeholder">
               <span className="index">{photo.label}</span>
