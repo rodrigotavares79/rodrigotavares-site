@@ -96,10 +96,7 @@ export default function Musica() {
         <div className="container">
           <span className="eyebrow">Regravações</span>
           <h2>No Soundcloud</h2>
-          <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
-            Os Inoxidáveis
-          </p>
-
+          
           <div className="grid">
             {FAIXAS_SOUNDCLOUD.map((faixa) => (
               <div className="card" key={faixa.index}>
