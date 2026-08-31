@@ -29,12 +29,17 @@ const FAIXAS = [
 ];
 
 const GALERIA: Photo[] = [
-  { src: null, label: "Foto 1", tall: true },
-  { src: null, label: "Foto 2" },
-  { src: null, label: "Foto 3" },
-  { src: null, label: "Foto 4" },
-  { src: null, label: "Foto 5" },
-  { src: null, label: "Foto 6" },
+  { src: "/gallery/Rodrigo-1.jpg", label: "Foto 1" },
+  { src: "/gallery/Rodrigo-2.jpg", label: "Foto 2" },
+  { src: "/gallery/Rodrigo-3.jpg", label: "Foto 3" },
+  { src: "/gallery/Rodrigo-4.jpg", label: "Foto 4" },
+  { src: "/gallery/Rodrigo-5.jpg", label: "Foto 5" },
+  { src: "/gallery/Rodrigo-6.jpg", label: "Foto 6", tall: true },
+  { src: "/gallery/Rodrigo-7.jpg", label: "Foto 7" },
+  { src: "/gallery/Rodrigo-8.jpg", label: "Foto 8" },
+  { src: "/gallery/Rodrigo-9.jpg", label: "Foto 9" },
+  { src: "/gallery/Rodrigo-10.jpg", label: "Foto 10" },
+  { src: "/gallery/Rodrigo-11.jpg", label: "Foto 11" },
 ];
 
 export default function Musica() {
