@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import "./globals.css";
@@ -36,7 +37,15 @@ export default function RootLayout({
       <body>
         <header className="site-header">
           <div className="container">
-            <a href="/" className="wordmark">Rodrigo Tavares</a>
+            <a href="/" className="wordmark">
+              <Image
+                src="/brand/logo-rodrigo-tavares.png"
+                alt="Rodrigo Tavares"
+                width={491}
+                height={162}
+                priority
+              />
+            </a>
             <Nav />
           </div>
         </header>
