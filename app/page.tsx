@@ -23,7 +23,7 @@ const LANCAMENTOS: Release[] = [
   {
     index: "B1",
     titulo: "Bem Vinda Noite",
-    tipo: "Faixa",
+    tipo: "Disco - Tudo anda bem",
     ano: "2006",
     href: "https://open.spotify.com/intl-pt/track/7GiCPhwCKCQtoNEVLGwa2f?si=3d8079a7460a49ce",
     creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
@@ -32,7 +32,7 @@ const LANCAMENTOS: Release[] = [
   {
     index: "B2",
     titulo: "Podemos Viver Mais",
-    tipo: "Faixa",
+    tipo: "Disco - Tudo anda bem",
     ano: "2006",
     href: "https://open.spotify.com/intl-pt/track/4DxrvdUqITglAjDpuvhr10?si=2a52fe621ac44817",
     creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
@@ -41,7 +41,7 @@ const LANCAMENTOS: Release[] = [
   {
     index: "B3",
     titulo: "Meu Tempo É Você",
-    tipo: "Faixa",
+    tipo: "Disco - Tudo anda bem",
     ano: "2006",
     href: "https://open.spotify.com/intl-pt/track/1QwrxskAppqO6ezYhf7ZQN?si=4b8a67b2125a47dc",
     creditos: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
@@ -96,7 +96,7 @@ export default function Home() {
       <section className="block">
         <div className="container">
           <span className="eyebrow">Novidades</span>
-          <h2>Últimos lançamentos</h2>
+          <h2>Músicas</h2>
           <ReleaseScroller releases={LANCAMENTOS} />
           <a href="/musica" className="btn btn-ghost" style={{ display: "inline-block", marginTop: "1.5rem" }}>
             Ver todos

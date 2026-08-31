@@ -4,27 +4,27 @@ import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 const FAIXAS = [
   {
     index: "B1",
-    titulo: "[placeholder] Nome da faixa",
-    ano: "2026",
-    descricao: "[placeholder] Uma linha sobre a faixa — de onde veio, com quem foi feita.",
-    spotify: "#",
-    youtube: "#",
+    titulo: "Bem Vinda Noite",
+    ano: "2006",
+    descricao: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+    spotify: "https://open.spotify.com/intl-pt/track/7GiCPhwCKCQtoNEVLGwa2f?si=3d8079a7460a49ce",
   },
   {
     index: "B2",
-    titulo: "[placeholder] Nome da faixa",
-    ano: "2025",
-    descricao: "[placeholder] Uma linha sobre a faixa.",
-    spotify: "#",
-    youtube: "#",
+    titulo: "Podemos Viver Mais",
+    ano: "2006",
+    descricao: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+    spotify: "https://open.spotify.com/intl-pt/track/4DxrvdUqITglAjDpuvhr10?si=2a52fe621ac44817",
   },
   {
     index: "B3",
-    titulo: "[placeholder] Nome da faixa",
-    ano: "2025",
-    descricao: "[placeholder] Uma linha sobre a faixa.",
-    spotify: "#",
-    youtube: "#",
+    titulo: "Meu Tempo É Você",
+    ano: "2006",
+    descricao: "Etanoise — comp. Rodrigo Tavares e Rodrigo Mattos",
+    capa: "/gallery/etanoise-capa.jpg",
+    spotify: "https://open.spotify.com/intl-pt/track/1QwrxskAppqO6ezYhf7ZQN?si=4b8a67b2125a47dc",
   },
 ];
 
@@ -49,24 +49,26 @@ export default function Musica() {
             Faixas
           </h1>
           <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
-            [placeholder] Cada card abaixo é pensado pra ter uma foto de capa
-            — troque o bloco de placeholder por &lt;img src="/gallery/..."&gt;
-            assim que tiver a arte de cada faixa.
+            Composições de Rodrigo Tavares gravadas pela banda Etanoise, no
+            disco <em>Tudo Anda Bem</em> (2006).
           </p>
 
           <div className="grid">
             {FAIXAS.map((faixa) => (
               <div className="card" key={faixa.index}>
-                <div className="photo-placeholder" style={{ aspectRatio: "1 / 1", marginBottom: "1rem" }}>
-                  <span className="index">{faixa.index}</span>
-                  <span className="text-muted">[placeholder] capa</span>
+                <div style={{ aspectRatio: "1 / 1", overflow: "hidden", borderRadius: "2px", marginBottom: "1rem" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={faixa.capa}
+                    alt={faixa.titulo}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
                 </div>
                 <span className="index">{faixa.index} · {faixa.ano}</span>
                 <h3>{faixa.titulo}</h3>
                 <p>{faixa.descricao}</p>
                 <div className="links">
-                  <a href={faixa.spotify}>Spotify</a>
-                  <a href={faixa.youtube}>YouTube</a>
+                  <a href={faixa.spotify} target="_blank" rel="noopener noreferrer">Spotify</a>
                 </div>
               </div>
             ))}
