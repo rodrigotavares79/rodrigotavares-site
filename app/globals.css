@@ -114,7 +114,7 @@ h1, h2, h3 {
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
 }
 
 .site-header .container {
@@ -132,14 +132,14 @@ h1, h2, h3 {
 }
 
 .wordmark img {
-  height: 2.25rem;
+  height: 3.5rem;
   width: auto;
   display: block;
 }
 
 @media (max-width: 30rem) {
   .wordmark img {
-    height: 1.85rem;
+    height: 2.75rem;
   }
 }
 
