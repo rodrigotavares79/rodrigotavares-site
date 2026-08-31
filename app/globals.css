@@ -126,12 +126,21 @@ h1, h2, h3 {
 }
 
 .wordmark {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--text);
+}
+
+.wordmark img {
+  height: 2.25rem;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 30rem) {
+  .wordmark img {
+    height: 1.85rem;
+  }
 }
 
 /* --- Hero --- */
