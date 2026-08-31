@@ -11,6 +11,7 @@ const GALERIA: Photo[] = [
   { src: "/gallery/Rodrigo-4.jpg", label: "Foto 4" },
   { src: "/gallery/Rodrigo-6.jpg", label: "Foto 6", tall: true },
   { src: "/gallery/Rodrigo-8.jpg", label: "Foto 8", tall: true },
+  { src: "/gallery/Rodrigo-12.jpg", label: "Foto 12", tall: true },
 ];
 
 export default function Sobre() {
