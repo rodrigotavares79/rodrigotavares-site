@@ -36,7 +36,14 @@ export default function RootLayout({
       <body>
         <header className="site-header">
           <div className="container">
-            <a href="/" className="wordmark">Rodrigo Tavares</a>
+            <a href="/" className="wordmark">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/gallery/assinatura-rodrigo-tavares.png"
+                alt="Rodrigo Tavares"
+                style={{ height: "2.5rem", width: "auto", display: "block" }}
+              />
+            </a>
             <Nav />
           </div>
         </header>
