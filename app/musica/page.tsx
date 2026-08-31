@@ -49,8 +49,7 @@ export default function Musica() {
             Faixas
           </h1>
           <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
-            Composições de Rodrigo Tavares gravadas pela banda Etanoise, no
-            disco <em>Tudo Anda Bem</em> (2006).
+            Parcerias autorais
           </p>
 
           <div className="grid">

@@ -12,7 +12,7 @@ export default function Contato() {
             Fale comigo
           </h1>
           <p className="text-muted" style={{ maxWidth: "30rem", marginTop: "0.75rem" }}>
-            [placeholder] Para shows, parcerias ou só para dizer oi.
+            Para shows, parcerias ou só para dizer oi, me envie uma mensagem.
           </p>
 
           {/*
@@ -40,8 +40,8 @@ export default function Contato() {
 
           <div className="contact-links">
             <a href="mailto:contato@rodrigotavares.com.br">contato@rodrigotavares.com.br</a>
-            <a href="#">[placeholder] Instagram</a>
-            <a href="#">[placeholder] YouTube</a>
+            <a href="https://www.instagram.com/rodrigotavares" target="_blank" rel="noopener noreferrer">Instagram - Rodrigo Tavares</a>
+            <a href="https://soundcloud.com/osinoxidaveis" target="_blank" rel="noopener noreferrer">Soundcloud - Rodrigo Tavares</a>
           </div>
         </div>
       </section>
