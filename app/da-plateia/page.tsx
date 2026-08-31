@@ -1,13 +1,18 @@
 import Footer from "@/components/Footer";
 import PhotoGrid, { Photo } from "@/components/PhotoGrid";
 
-// [placeholder] Fotos enviadas pelo público nos shows. Coloque os arquivos
-// em public/gallery/ e adicione aqui, no mesmo padrão da galeria de /musica.
-const FOTOS: Photo[] = [];
+// Fotos enviadas pelo público nos shows. Arquivos em public/gallery/.
+const FOTOS: Photo[] = [
+  { src: "/gallery/TheBridgePub-1.jpeg", label: "Foto 1", caption: "The Bridge Pub — Belo Horizonte, MG" },
+  { src: "/gallery/TheBridgePub-2.jpeg", label: "Foto 2", caption: "The Bridge Pub — Belo Horizonte, MG" },
+  { src: "/gallery/TheBridgePub-3.jpeg", label: "Foto 3", caption: "The Bridge Pub — Belo Horizonte, MG" },
+];
 
-// [placeholder] Vídeos enviados pelo público — pode ser um link do
-// Instagram, YouTube, ou onde estiver hospedado.
-const VIDEOS: { titulo: string; autor: string; link: string }[] = [];
+// Vídeos enviados pelo público. "src" para arquivo local (em
+// public/videos/), ou "link" para algo hospedado fora (Instagram, YouTube).
+const VIDEOS: { titulo: string; local: string; src?: string; link?: string }[] = [
+  { titulo: "Registro do show", local: "The Bridge Pub — Belo Horizonte, MG", src: "/videos/VideoTheBridgePub-1.mp4" },
+];
 
 export default function DaPlateia() {
   return (
@@ -52,15 +57,30 @@ export default function DaPlateia() {
               Assim que alguém compartilhar um registro, ele aparece aqui.
             </div>
           ) : (
-            <div style={{ marginTop: "2rem" }}>
-              {VIDEOS.map((video, i) => (
-                <div className="show-row" key={i}>
-                  <span className="show-date">{video.autor}</span>
-                  <a href={video.link} target="_blank" rel="noopener noreferrer">
-                    {video.titulo} →
-                  </a>
-                </div>
-              ))}
+            <div className="grid" style={{ marginTop: "2rem" }}>
+              {VIDEOS.map((video, i) =>
+                video.src ? (
+                  <div key={i}>
+                    <video
+                      controls
+                      preload="metadata"
+                      style={{ width: "100%", borderRadius: "2px", display: "block", background: "#000" }}
+                    >
+                      <source src={video.src} type="video/mp4" />
+                    </video>
+                    <p style={{ marginTop: "0.6rem", fontSize: "0.85rem" }}>{video.titulo}</p>
+                    <p className="text-muted" style={{ fontSize: "0.8rem" }}>{video.local}</p>
+                  </div>
+                ) : (
+                  <div className="card" key={i}>
+                    <h3>{video.titulo}</h3>
+                    <p>{video.local}</p>
+                    <div className="links">
+                      <a href={video.link} target="_blank" rel="noopener noreferrer">Assistir →</a>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           )}
         </div>
