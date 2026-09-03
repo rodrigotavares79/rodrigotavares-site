@@ -1,11 +1,20 @@
 import Footer from "@/components/Footer";
-import PhotoGrid, { Photo } from "@/components/PhotoGrid";
+import Gallery from "@/components/Gallery";
 
 // Fotos enviadas pelo público nos shows. Arquivos em public/gallery/.
-const FOTOS: Photo[] = [
+const FOTOS = [
   { src: "/gallery/TheBridgePub-1.jpeg", label: "Foto 1", caption: "The Bridge Pub — Belo Horizonte, MG" },
   { src: "/gallery/TheBridgePub-2.jpeg", label: "Foto 2", caption: "The Bridge Pub — Belo Horizonte, MG" },
   { src: "/gallery/TheBridgePub-3.jpeg", label: "Foto 3", caption: "The Bridge Pub — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-Sirene_Fleming-01.jpg", label: "Foto 4", caption: "Sirene Fleming — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-Sirene_Fleming-02.jpeg", label: "Foto 5", caption: "Sirene Fleming — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-Sirene_Fleming-03.jpeg", label: "Foto 6", caption: "Sirene Fleming — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-The_Bridge_Pub-01.jpeg", label: "Foto 7", caption: "The Bridge Pub — Belo Horizonte, MG", position: "center 40%" },
+  { src: "/gallery/DaPlateia-The_Bridge_Pub-02.jpeg", label: "Foto 8", caption: "The Bridge Pub — Belo Horizonte, MG", position: "center 30%" },
+  { src: "/gallery/DaPlateia-The_Bridge_Pub-03.jpg", label: "Foto 9", caption: "The Bridge Pub — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-100__Malte-05.jpg", label: "Foto 10", caption: "100% Malte — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-Festa_Particular-02.jpg", label: "Foto 11", caption: "Festa Particular — Belo Horizonte, MG" },
+  { src: "/gallery/DaPlateia-Festa_Particular-06.jpg", label: "Foto 12", caption: "Festa Particular — Belo Horizonte, MG" },
 ];
 
 // Vídeos enviados pelo público. "src" para arquivo local (em
@@ -43,7 +52,7 @@ export default function DaPlateia() {
               Assim que alguém compartilhar um registro, ele aparece aqui.
             </div>
           ) : (
-            <PhotoGrid photos={FOTOS} />
+            <Gallery photos={FOTOS} />
           )}
         </div>
       </section>
