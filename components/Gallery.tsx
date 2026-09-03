@@ -12,7 +12,7 @@ export type GalleryPhoto = {
   position?: string;
   // "contain" mostra a foto inteira (zoom out), sem cortar nada.
   fit?: "cover" | "contain";
-};
+}; 
 
 export default function Gallery({ photos }: { photos: GalleryPhoto[] }) {
   const [open, setOpen] = useState<number | null>(null);
