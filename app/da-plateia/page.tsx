@@ -19,8 +19,9 @@ const FOTOS = [
 
 // Vídeos enviados pelo público. "src" para arquivo local (em
 // public/videos/), ou "link" para algo hospedado fora (Instagram, YouTube).
-const VIDEOS: { titulo: string; local: string; src?: string; link?: string }[] = [
+const VIDEOS: { titulo: string; local: string; src?: string; link?: string; poster?: string }[] = [
   { titulo: "Registro do show", local: "The Bridge Pub — Belo Horizonte, MG", src: "/videos/VideoTheBridgePub-1.mp4" },
+  { titulo: "Trecho 'Heart of Gold'", local: "Sirène Fleming — Belo Horizonte, MG", src: "/videos/Video_Sirene.mp4", poster: "/videos/Video_Sirene-poster.jpg" },
 ];
 
 export default function DaPlateia() {
@@ -73,6 +74,7 @@ export default function DaPlateia() {
                     <video
                       controls
                       preload="metadata"
+                      poster={video.poster}
                       style={{ width: "100%", borderRadius: "2px", display: "block", background: "#000" }}
                     >
                       <source src={video.src} type="video/mp4" />
