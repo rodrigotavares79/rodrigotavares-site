@@ -87,17 +87,25 @@ export default function Contato() {
           </form>
 
           <div className="contact-links">
-            <a href="mailto:contato@rodrigotavares.com.br">contato@rodrigotavares.com.br</a>
             <a href="https://www.instagram.com/rodrigotavares" target="_blank" rel="noopener noreferrer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: "0.4rem", verticalAlign: "-3px" }}>
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4.5" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              <svg width="16" height="16" viewBox="0 0 24 24" style={{ marginRight: "0.4rem", verticalAlign: "-3px" }}>
+                <defs>
+                  <radialGradient id="ig-gradient" cx="30%" cy="107%" r="150%">
+                    <stop offset="0%" stopColor="#fdf497" />
+                    <stop offset="5%" stopColor="#fdf497" />
+                    <stop offset="45%" stopColor="#fd5949" />
+                    <stop offset="60%" stopColor="#d6249f" />
+                    <stop offset="90%" stopColor="#285AEB" />
+                  </radialGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig-gradient)" />
+                <circle cx="12" cy="12" r="4.5" fill="none" stroke="#fff" strokeWidth="1.7" />
+                <circle cx="17.3" cy="6.7" r="1.1" fill="#fff" />
               </svg>
               Instagram - Rodrigo Tavares
             </a>
             <a href="https://soundcloud.com/osinoxidaveis" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="16" viewBox="0 0 32 24" fill="currentColor" style={{ marginRight: "0.4rem", verticalAlign: "-3px" }}>
+              <svg width="18" height="16" viewBox="0 0 32 24" fill="#ff5500" style={{ marginRight: "0.4rem", verticalAlign: "-3px" }}>
                 <rect x="0" y="10" width="1.5" height="8" rx="0.75" />
                 <rect x="3" y="7" width="1.5" height="11" rx="0.75" />
                 <rect x="6" y="9" width="1.5" height="9" rx="0.75" />
