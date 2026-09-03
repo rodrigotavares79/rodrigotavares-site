@@ -37,7 +37,7 @@ export default function Musica() {
               <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <span className="nav-dot" aria-hidden="true" /> Parcerias Autorais
               </span>
-              <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
+              <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 4.2rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
                 Ouça agora
                 <br />
                 no Spotify
@@ -71,7 +71,7 @@ export default function Musica() {
           <div className="split-block" style={{ alignItems: "center" }}>
             <div>
               <span className="eyebrow">Regravações</span>
-              <h2 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
+              <h2 style={{ fontSize: "clamp(2.8rem, 7vw, 4.2rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
                 Ouça agora
                 <br />
                 no Soundcloud
