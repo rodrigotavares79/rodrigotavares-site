@@ -60,7 +60,7 @@ export default function DaPlateia() {
             <div className="grid" style={{ marginTop: "2rem" }}>
               {VIDEOS.map((video, i) =>
                 video.src ? (
-                  <div key={i}>
+                  <div className="card" key={i}>
                     <video
                       controls
                       preload="metadata"
