@@ -27,33 +27,6 @@ const FAIXAS = [
   },
 ];
 
-const FAIXAS_SOUNDCLOUD = [
-  {
-    index: "C1",
-    titulo: "Knockin' on Heaven's Door",
-    ano: "2020",
-    descricao: "Os Inoxidáveis — Rodrigo Tavares",
-    capa: "/gallery/os-inoxidaveis-capa.jpg",
-    soundcloud: "https://soundcloud.com/osinoxidaveis/knockin-on-heavens-door",
-  },
-  {
-    index: "C2",
-    titulo: "Something",
-    ano: "2020",
-    descricao: "Os Inoxidáveis — Rodrigo Tavares (voz), Rafael Oliveira (violão e guitarra)",
-    capa: "/gallery/os-inoxidaveis-capa.jpg",
-    soundcloud: "https://soundcloud.com/osinoxidaveis/something",
-  },
-  {
-    index: "C3",
-    titulo: "I Wanna Hold Your Hand",
-    ano: "2013",
-    descricao: "Os Inoxidáveis — Rodrigo Tavares (voz), Francis Magalhães (violão, baixo, percussão e backing vocals)",
-    capa: "/gallery/os-inoxidaveis-capa.jpg",
-    soundcloud: "https://soundcloud.com/osinoxidaveis/i-wanna-hold-your-hand",
-  },
-];
-
 export default function Musica() {
   return (
     <>
@@ -62,59 +35,67 @@ export default function Musica() {
           <div className="split-block" style={{ alignItems: "center" }}>
             <div>
               <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span className="nav-dot" aria-hidden="true" /> Discografia
+                <span className="nav-dot" aria-hidden="true" /> Parcerias Autorais
               </span>
               <h1 style={{ fontSize: "clamp(2.4rem, 6vw, 3.6rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
                 Ouça agora
                 <br />
                 no Spotify
               </h1>
-              <p className="text-muted" style={{ maxWidth: "26rem", marginTop: "1rem" }}>
-                Parcerias autorais
-              </p>
             </div>
 
-            <iframe
-              style={{ borderRadius: "12px" }}
-              src="https://open.spotify.com/embed/playlist/1EmHSIgGTQJUr7ekjlaILk?utm_source=generator&theme=0"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
+            <div
+              style={{
+                background: "linear-gradient(160deg, var(--accent-deep) 0%, var(--surface) 65%)",
+                border: "1px solid var(--border)",
+                borderRadius: "16px",
+                padding: "1.25rem",
+              }}
+            >
+              <iframe
+                style={{ borderRadius: "12px" }}
+                src="https://open.spotify.com/embed/playlist/1EmHSIgGTQJUr7ekjlaILk?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <span className="eyebrow">Regravações</span>
-          <h2>No Soundcloud</h2>
-          
-          <div className="grid">
-            {FAIXAS_SOUNDCLOUD.map((faixa) => (
-              <div className="card" key={faixa.index}>
-                <div style={{ aspectRatio: "1 / 1", overflow: "hidden", borderRadius: "2px", marginBottom: "1rem" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={faixa.capa}
-                    alt={faixa.titulo}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </div>
-                <span className="index">{faixa.ano}</span>
-                <h3>
-                  <a href={faixa.soundcloud} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                    {faixa.titulo}
-                  </a>
-                </h3>
-                <p>{faixa.descricao}</p>
-                <div className="links">
-                  <a href={faixa.soundcloud} target="_blank" rel="noopener noreferrer">Soundcloud</a>
-                </div>
-              </div>
-            ))}
+          <div className="split-block" style={{ alignItems: "center" }}>
+            <div>
+              <span className="eyebrow">Regravações</span>
+              <h2 style={{ marginTop: "0.5rem" }}>
+                Ouça agora
+                <br />
+                no Soundcloud
+              </h2>
+            </div>
+
+            <div
+              style={{
+                background: "linear-gradient(160deg, var(--accent-deep) 0%, var(--surface) 65%)",
+                border: "1px solid var(--border)",
+                borderRadius: "16px",
+                padding: "1.25rem",
+              }}
+            >
+              <iframe
+                style={{ borderRadius: "12px" }}
+                src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fosinoxidaveis&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"
+                width="100%"
+                height="300"
+                frameBorder="0"
+                allow="autoplay"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
