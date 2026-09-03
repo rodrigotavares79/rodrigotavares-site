@@ -81,7 +81,11 @@ export default function Musica() {
                   />
                 </div>
                 <span className="index">{faixa.ano}</span>
-                <h3>{faixa.titulo}</h3>
+                <h3>
+                  <a href={faixa.spotify} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                    {faixa.titulo}
+                  </a>
+                </h3>
                 <p>{faixa.descricao}</p>
                 <div className="links">
                   <a href={faixa.spotify} target="_blank" rel="noopener noreferrer">Spotify</a>
@@ -109,13 +113,41 @@ export default function Musica() {
                   />
                 </div>
                 <span className="index">{faixa.ano}</span>
-                <h3>{faixa.titulo}</h3>
+                <h3>
+                  <a href={faixa.soundcloud} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                    {faixa.titulo}
+                  </a>
+                </h3>
                 <p>{faixa.descricao}</p>
                 <div className="links">
                   <a href={faixa.soundcloud} target="_blank" rel="noopener noreferrer">Soundcloud</a>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="container">
+          <span className="eyebrow">Vídeos</span>
+
+          <div className="grid" style={{ marginTop: "2rem" }}>
+            <div>
+              <video
+                controls
+                preload="metadata"
+                style={{ width: "100%", borderRadius: "2px", display: "block", background: "#000" }}
+              >
+                <source src="/videos/Inox_ShesElectric.mp4" type="video/mp4" />
+              </video>
+              <p style={{ marginTop: "0.6rem", fontSize: "0.85rem" }}>
+                She&apos;s Electric (Oasis cover)
+              </p>
+              <p className="text-muted" style={{ fontSize: "0.8rem" }}>
+                Os Inoxidáveis (Rodrigo Tavares e Rafael Oliveira)
+              </p>
+            </div>
           </div>
         </div>
       </section>
