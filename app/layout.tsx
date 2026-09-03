@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const anton = Anton({
   subsets: ["latin"],
+  weight: "400",
   variable: "--font-display",
   display: "swap",
 });
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt-BR" className={`${anton.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <header className="site-header">
           <div className="container">
