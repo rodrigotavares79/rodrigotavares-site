@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
+import SocialIcons from "@/components/SocialIcons";
 import "./globals.css";
 
 const anton = Anton({
@@ -46,7 +47,10 @@ export default function RootLayout({
                 height={162}
               />
             </a>
-            <Nav />
+            <div className="nav-right">
+              <Nav />
+              <SocialIcons />
+            </div>
           </div>
         </header>
         {children}
