@@ -1,4 +1,20 @@
 import Footer from "@/components/Footer";
+import VideoCarousel from "@/components/VideoCarousel";
+
+const VIDEOS = [
+  {
+    src: "/videos/Inox_ShesElectric.mp4",
+    poster: "/videos/Inox_ShesElectric-poster.jpg",
+    titulo: "She's Electric (Oasis cover)",
+    credito: "Os Inoxidáveis (Rodrigo Tavares e Rafael Oliveira)",
+  },
+  {
+    src: "/videos/Inox_Something.mp4",
+    poster: "/videos/Inox_Something-poster.jpg",
+    titulo: "Something (Beatles cover)",
+    credito: "Os Inoxidáveis (Rodrigo Tavares e Rafael Oliveira)",
+  },
+];
 
 const FAIXAS = [
   {
@@ -120,20 +136,7 @@ export default function Musica() {
                 padding: "1.25rem",
               }}
             >
-              <video
-                controls
-                preload="metadata"
-                poster="/videos/Inox_ShesElectric-poster.jpg"
-                style={{ width: "100%", borderRadius: "12px", display: "block", background: "#000" }}
-              >
-                <source src="/videos/Inox_ShesElectric.mp4" type="video/mp4" />
-              </video>
-              <p style={{ marginTop: "0.6rem", fontSize: "0.85rem" }}>
-                She&apos;s Electric (Oasis cover)
-              </p>
-              <p className="text-muted" style={{ fontSize: "0.8rem" }}>
-                Os Inoxidáveis (Rodrigo Tavares e Rafael Oliveira)
-              </p>
+              <VideoCarousel videos={VIDEOS} />
             </div>
           </div>
         </div>
