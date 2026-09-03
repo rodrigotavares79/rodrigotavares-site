@@ -27,9 +27,9 @@ export default function DaPlateia() {
           </h1>
           <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
             Fotos e vídeos feitos pelo público nos shows. Se você registrou
-            algum momento, manda lá pelo{" "}
+            algum momento, envia uma mensagem para mim em{" "}
             <a href="/contato" style={{ color: "var(--accent)" }}>contato</a>{" "}
-            que eu posso publicar aqui.
+            que eu combino de pegar com você!
           </p>
         </div>
       </section>
