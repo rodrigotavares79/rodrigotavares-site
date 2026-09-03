@@ -59,39 +59,30 @@ export default function Musica() {
     <>
       <section className="block" style={{ paddingTop: "4rem" }}>
         <div className="container">
-          <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span className="nav-dot" aria-hidden="true" /> Música
-          </span>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginTop: "0.5rem" }}>
-            Faixas
-          </h1>
-          <p className="text-muted" style={{ maxWidth: "34rem", marginTop: "0.75rem" }}>
-            Parcerias autorais
-          </p>
+          <div className="split-block" style={{ alignItems: "center" }}>
+            <div>
+              <span className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <span className="nav-dot" aria-hidden="true" /> Discografia
+              </span>
+              <h1 style={{ fontSize: "clamp(2.4rem, 6vw, 3.6rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
+                Ouça agora
+                <br />
+                no Spotify
+              </h1>
+              <p className="text-muted" style={{ maxWidth: "26rem", marginTop: "1rem" }}>
+                Parcerias autorais
+              </p>
+            </div>
 
-          <div className="grid">
-            {FAIXAS.map((faixa) => (
-              <div className="card" key={faixa.index}>
-                <div style={{ aspectRatio: "1 / 1", overflow: "hidden", borderRadius: "2px", marginBottom: "1rem" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={faixa.capa}
-                    alt={faixa.titulo}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </div>
-                <span className="index">{faixa.ano}</span>
-                <h3>
-                  <a href={faixa.spotify} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                    {faixa.titulo}
-                  </a>
-                </h3>
-                <p>{faixa.descricao}</p>
-                <div className="links">
-                  <a href={faixa.spotify} target="_blank" rel="noopener noreferrer">Spotify</a>
-                </div>
-              </div>
-            ))}
+            <iframe
+              style={{ borderRadius: "12px" }}
+              src="https://open.spotify.com/embed/playlist/1EmHSIgGTQJUr7ekjlaILk?utm_source=generator&theme=0"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
