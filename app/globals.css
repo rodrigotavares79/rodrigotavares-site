@@ -183,6 +183,11 @@ h1, h2, h3 {
   opacity: 0;
 }
 
+.credit-link:hover {
+  color: var(--text) !important;
+  border-color: var(--accent) !important;
+}
+
 .social-icons a:hover .icon-color {
   opacity: 1;
 }
