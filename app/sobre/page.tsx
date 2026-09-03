@@ -71,6 +71,41 @@ export default function Sobre() {
         <div className="container">
           <span className="eyebrow">Galeria</span>
           <PhotoGrid photos={GALERIA} />
+
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              marginTop: "1.25rem",
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.78rem",
+              color: "var(--text-muted)",
+            }}
+          >
+            Fotos:
+            <a
+              href="https://www.instagram.com/thiagolemosc?igsi=M20zczV0ZmQ0ZG1h"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="credit-link"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                color: "var(--text-muted)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              @thiagolemosc
+            </a>
+          </p>
         </div>
       </section>
 
