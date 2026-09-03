@@ -102,14 +102,29 @@ export default function Musica() {
 
       <section className="block" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <span className="eyebrow">Vídeos</span>
+          <div className="split-block" style={{ alignItems: "center" }}>
+            <div>
+              <span className="eyebrow">Vídeos</span>
+              <h2 style={{ fontSize: "clamp(2.8rem, 7vw, 4.2rem)", lineHeight: 0.98, marginTop: "0.5rem" }}>
+                Assista agora
+                <br />
+                aos vídeos
+              </h2>
+            </div>
 
-          <div className="grid" style={{ marginTop: "2rem" }}>
-            <div className="card">
+            <div
+              style={{
+                background: "linear-gradient(160deg, var(--accent) 0%, var(--surface) 65%)",
+                border: "1px solid var(--border)",
+                borderRadius: "16px",
+                padding: "1.25rem",
+              }}
+            >
               <video
                 controls
                 preload="metadata"
-                style={{ width: "100%", borderRadius: "2px", display: "block", background: "#000" }}
+                poster="/videos/Inox_ShesElectric-poster.jpg"
+                style={{ width: "100%", borderRadius: "12px", display: "block", background: "#000" }}
               >
                 <source src="/videos/Inox_ShesElectric.mp4" type="video/mp4" />
               </video>
