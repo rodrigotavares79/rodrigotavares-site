@@ -133,7 +133,7 @@ export default function Musica() {
           <span className="eyebrow">Vídeos</span>
 
           <div className="grid" style={{ marginTop: "2rem" }}>
-            <div>
+            <div className="card">
               <video
                 controls
                 preload="metadata"
