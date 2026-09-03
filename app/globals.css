@@ -8,7 +8,7 @@
   --accent-deep: #8b2a2a;
   --border: #332c22;
 
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
@@ -51,8 +51,9 @@ img {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin: 0;
 }
 
