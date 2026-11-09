@@ -106,21 +106,36 @@ const repertorio = {
     { musica: "Learn to Fly", artista: "Foo Fighters" },
     { musica: "Don’t Let Me Down", artista: "The Beatles" },
     { musica: "Have You Ever Seen the Rain", artista: "Creedence Clearwater Revival" },
-    { musica: "Stand by Me", artista: "Ben E. King" },
-    { musica: "Bad Moon Rising", artista: "Creedence Clearwater Revival" },
   ],
   nacional: [
     { musica: "O Papa é Pop", artista: "Engenheiros do Hawaii" },
-    { musica: "Proibida pra Mim", artista: "Charlie Brown Jr." },
     { musica: "Cowboy Fora da Lei", artista: "Raul Seixas" },
     { musica: "Exagerado", artista: "Cazuza" },
     { musica: "Televisão", artista: "Titãs" },
-    { musica: "Envelheço na Cidade", artista: "Ira!" },
-    { musica: "Rádio Blá", artista: "Lobão" },
     { musica: "Acima do Sol", artista: "Skank" },
     { musica: "Agora Só Falta Você", artista: "Rita Lee" },
   ],
 };
+
+const perguntas = [
+  {
+    pergunta: "Como funciona o pagamento?",
+    resposta: "50% do valor na contratação, como sinal via Pix, e 50% após o show, por transferência bancária ou Pix.",
+  },
+  {
+    pergunta: "Com quanta antecedência devo reservar?",
+    resposta:
+      "Quanto mais antecedência, melhor. Principalmente se houver pedido de música especial, que precisa de tempo para ensaio.",
+  },
+  {
+    pergunta: "Você emite nota fiscal?",
+    resposta: "Sim.",
+  },
+  {
+    pergunta: "Há intervalo durante o show?",
+    resposta: "A combinar. O show pode ser dividido em 2 sets ou feito em apresentação única, sem intervalo.",
+  },
+];
 
 // Quando tiver depoimentos reais, preencha aqui. Com a lista vazia, a seção não aparece.
 const depoimentos: { texto: string; nome: string; local: string }[] = [
@@ -311,6 +326,20 @@ export default function ContratarPage() {
             <strong>Show fora de Belo Horizonte?</strong> Os valores acima são para a capital. Para outras cidades,
             transporte, hospedagem e alimentação são combinados à parte.
           </p>
+        </div>
+      </section>
+
+      {/* PERGUNTAS FREQUENTES */}
+      <section className={styles.section}>
+        <span className={styles.eyebrow}>Perguntas frequentes</span>
+        <h2 className={styles.h2}>Antes de fechar</h2>
+        <div className={styles.faq}>
+          {perguntas.map((q) => (
+            <details key={q.pergunta} className={styles.faqItem}>
+              <summary className={styles.faqQuestion}>{q.pergunta}</summary>
+              <p className={styles.faqAnswer}>{q.resposta}</p>
+            </details>
+          ))}
         </div>
       </section>
 
