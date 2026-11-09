@@ -15,16 +15,9 @@ const TRACKS = [
 export default function Nav() {
   const pathname = usePathname();
 
-  // Na página de proposta (/contratar) o menu vira um único link para o site.
+  // Na página de proposta (/contratar) o menu não aparece: fica só a logo e os ícones.
   if (pathname?.startsWith("/contratar")) {
-    return (
-      <nav className="tracklist-nav" aria-label="Navegação">
-        <Link href="/">
-          <span className="nav-dot" aria-hidden="true" />
-          Meu website
-        </Link>
-      </nav>
-    );
+    return null;
   }
 
   return (
