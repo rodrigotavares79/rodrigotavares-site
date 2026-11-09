@@ -88,7 +88,7 @@ const palcos = [
 ];
 
 const fotos = [
-  { src: "/gallery/Rodrigo-1.jpg", alt: "Rodrigo Tavares com violão" },
+  { src: "/gallery/Rodrigo-4.jpg", alt: "Rodrigo Tavares" },
   { src: "/gallery/Rodrigo-2.jpg", alt: "Retrato de Rodrigo Tavares" },
   { src: "/gallery/TheBridgePub-1.jpeg", alt: "Show no The Bridge Pub" },
 ];
@@ -143,6 +143,7 @@ export default function ContratarPage() {
     <div className={styles.page}>
       {/* HERO */}
       <section className={styles.hero}>
+        <div className={styles.heroText}>
         <span className={styles.eyebrow}>Proposta de show</span>
         <h1 className={styles.heroTitle}>
           Pop and Roll
@@ -163,6 +164,9 @@ export default function ContratarPage() {
             Falar no WhatsApp
           </a>
         </div>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/gallery/Rodrigo-1.jpg" alt="Rodrigo Tavares com violão" className={styles.heroPhoto} />
       </section>
 
       {/* GALERIA */}
