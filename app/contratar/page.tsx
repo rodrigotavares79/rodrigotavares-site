@@ -56,6 +56,7 @@ const planos = [
     id: "C",
     titulo: "Festas e eventos intimistas",
     formato: "Duo Os Inoxidáveis",
+    destaque: true,
     preco: "R$ 1.500",
     itens: ["Voz e violão: duo Os Inoxidáveis", "Duração: 2h + bis", "Som: próprio ou da casa"],
     mensagem: base + "Plano C (Festas e eventos intimistas – duo Os Inoxidáveis, R$ 1.500). Data do evento: ",
@@ -157,7 +158,7 @@ export default function ContratarPage() {
           <a href="#formatos" className={styles.btnPrimary}>
             Ver formatos e valores
           </a>
-          <a href={waGeral} target="_blank" rel="noopener noreferrer" className={styles.btnGhost}>
+          <a href={waGeral} target="_blank" rel="noopener noreferrer" className={styles.btnWa}>
             <IconeWhatsApp />
             Falar no WhatsApp
           </a>
@@ -232,7 +233,7 @@ export default function ContratarPage() {
       <section className={styles.section}>
         <span className={styles.eyebrow}>Repertório</span>
         <h2 className={styles.h2}>O que rola no show</h2>
-        <p className={styles.muted}>Uma amostra das músicas que o público canta junto.</p>
+        <p className={styles.muted}>Uma prévia do repertório. Gostaria de ouvir alguma em especial? Me envia o seu pedido!</p>
         <div className={styles.setlist}>
           {[
             { titulo: "Internacional", lista: repertorio.internacional },
@@ -278,8 +279,9 @@ export default function ContratarPage() {
         <p className={styles.muted}>Escolha o formato e a conversa abre no WhatsApp, já com ele preenchido.</p>
         <div className={styles.plans}>
           {planos.map((p) => (
-            <div key={p.id} className={styles.plan}>
+            <div key={p.id} className={`${styles.plan} ${"destaque" in p ? styles.planFeatured : ""}`}>
               <div className={styles.planHead}>
+                {"destaque" in p && <span className={styles.badge}>Mais escolhido</span>}
                 <span className={styles.eyebrow}>Plano {p.id}</span>
                 <h3 className={styles.planTitle}>{p.titulo}</h3>
                 <span className={styles.planFormat}>{p.formato}</span>
@@ -311,7 +313,8 @@ export default function ContratarPage() {
       {/* CHAMADA FINAL */}
       <section className={styles.cta}>
         <p className={styles.ctaTitle}>Vamos fechar a sua data?</p>
-        <a href={waGeral} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
+        <a href={waGeral} target="_blank" rel="noopener noreferrer" className={styles.btnWa}>
+          <IconeWhatsApp />
           Chamar no WhatsApp
         </a>
       </section>
