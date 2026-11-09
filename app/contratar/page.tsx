@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   title: "Contratar show — Rodrigo Tavares",
   description: "Formatos e valores de show de Rodrigo Tavares — Pop and Roll de Boteco.",
   robots: { index: false, follow: false },
+  metadataBase: new URL("https://www.rodrigotavares.com.br"),
+  // Prévia do link (WhatsApp, Instagram, etc.)
+  openGraph: {
+    title: "Contratar show — Rodrigo Tavares",
+    description: "Pop and Roll de Boteco: formatos e valores para bares, festas e eventos. Fale direto no WhatsApp.",
+    url: "/contratar",
+    siteName: "Rodrigo Tavares",
+    locale: "pt_BR",
+    type: "website",
+    images: [{ url: "/gallery/Rodrigo-1.jpg", width: 900, height: 599, alt: "Rodrigo Tavares com violão" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contratar show — Rodrigo Tavares",
+    description: "Pop and Roll de Boteco: formatos e valores para bares, festas e eventos.",
+    images: ["/gallery/Rodrigo-1.jpg"],
+  },
 };
 
 const WHATSAPP = "5531991206206";
@@ -22,6 +39,7 @@ const planos = [
   {
     id: "A",
     titulo: "Bar",
+    formato: "Solo ou duo",
     preco: "A combinar",
     itens: ["Voz e violão: solo ou duo Os Inoxidáveis", "Duração: 2h + bis", "Som: próprio ou da casa"],
     mensagem: base + "Plano A (Bar). Data do evento: ",
@@ -29,6 +47,7 @@ const planos = [
   {
     id: "B",
     titulo: "Festas e eventos intimistas",
+    formato: "Voz e violão · solo",
     preco: "R$ 700",
     itens: ["Voz e violão (solo)", "Duração: 2h + bis", "Som: próprio ou da casa"],
     mensagem: base + "Plano B (Festas e eventos intimistas – voz e violão, R$ 700). Data do evento: ",
@@ -36,6 +55,7 @@ const planos = [
   {
     id: "C",
     titulo: "Festas e eventos intimistas",
+    formato: "Duo Os Inoxidáveis",
     preco: "R$ 1.500",
     itens: ["Voz e violão: duo Os Inoxidáveis", "Duração: 2h + bis", "Som: próprio ou da casa"],
     mensagem: base + "Plano C (Festas e eventos intimistas – duo Os Inoxidáveis, R$ 1.500). Data do evento: ",
@@ -43,6 +63,7 @@ const planos = [
   {
     id: "D",
     titulo: "Festas grandes, casamentos e eventos corporativos",
+    formato: "Solo ou duo · com estrutura",
     preco: "A combinar",
     itens: [
       "Voz e violão: solo ou duo Os Inoxidáveis",
@@ -75,6 +96,30 @@ const videos = [
   { src: "/videos/VideoTheBridgePub-1.mp4", poster: undefined, titulo: "Trecho “Don’t Let Me Down”", local: "The Bridge Pub, BH" },
   { src: "/videos/Inox_ShesElectric.mp4", poster: "/videos/Inox_ShesElectric-poster.jpg", titulo: "“She’s Electric” (Oasis cover)", local: "Os Inoxidáveis" },
 ];
+
+const repertorio = {
+  internacional: [
+    { musica: "Come As You Are", artista: "Nirvana" },
+    { musica: "A Horse with No Name", artista: "America" },
+    { musica: "Sweet Home Alabama", artista: "Lynyrd Skynyrd" },
+    { musica: "Learn to Fly", artista: "Foo Fighters" },
+    { musica: "Don’t Let Me Down", artista: "The Beatles" },
+    { musica: "Have You Ever Seen the Rain", artista: "Creedence Clearwater Revival" },
+    { musica: "Stand by Me", artista: "Ben E. King" },
+    { musica: "Bad Moon Rising", artista: "Creedence Clearwater Revival" },
+  ],
+  nacional: [
+    { musica: "O Papa é Pop", artista: "Engenheiros do Hawaii" },
+    { musica: "Proibida pra Mim", artista: "Charlie Brown Jr." },
+    { musica: "Cowboy Fora da Lei", artista: "Raul Seixas" },
+    { musica: "Exagerado", artista: "Cazuza" },
+    { musica: "Televisão", artista: "Titãs" },
+    { musica: "Envelheço na Cidade", artista: "Ira!" },
+    { musica: "Rádio Blá", artista: "Lobão" },
+    { musica: "Acima do Sol", artista: "Skank" },
+    { musica: "Agora Só Falta Você", artista: "Rita Lee" },
+  ],
+};
 
 // Quando tiver depoimentos reais, preencha aqui. Com a lista vazia, a seção não aparece.
 const depoimentos: { texto: string; nome: string; local: string }[] = [
@@ -183,6 +228,31 @@ export default function ContratarPage() {
         </div>
       </section>
 
+      {/* REPERTORIO */}
+      <section className={styles.section}>
+        <span className={styles.eyebrow}>Repertório</span>
+        <h2 className={styles.h2}>O que rola no show</h2>
+        <p className={styles.muted}>Uma amostra das músicas que o público canta junto.</p>
+        <div className={styles.setlist}>
+          {[
+            { titulo: "Internacional", lista: repertorio.internacional },
+            { titulo: "Nacional", lista: repertorio.nacional },
+          ].map((bloco) => (
+            <div key={bloco.titulo} className={styles.setlistCol}>
+              <h3 className={styles.setlistTitle}>{bloco.titulo}</h3>
+              <ul className={styles.songs}>
+                {bloco.lista.map((m) => (
+                  <li key={m.musica}>
+                    <span className={styles.song}>{m.musica}</span>
+                    <span className={styles.artist}>{m.artista}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* VIDEOS */}
       <section className={styles.section}>
         <span className={styles.eyebrow}>Da plateia</span>
@@ -212,6 +282,7 @@ export default function ContratarPage() {
               <div className={styles.planHead}>
                 <span className={styles.eyebrow}>Plano {p.id}</span>
                 <h3 className={styles.planTitle}>{p.titulo}</h3>
+                <span className={styles.planFormat}>{p.formato}</span>
               </div>
               <p className={styles.price}>{p.preco}</p>
               <ul className={styles.planList}>
@@ -245,6 +316,10 @@ export default function ContratarPage() {
         </a>
       </section>
     </div>
+    <a href={waGeral} target="_blank" rel="noopener noreferrer" className={styles.floatWa} aria-label="Falar no WhatsApp">
+      <IconeWhatsApp />
+      WhatsApp
+    </a>
     <Footer showSocial />
     </>
   );
