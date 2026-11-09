@@ -63,7 +63,6 @@ const palcos = [
   "Underground Pub",
   "Sirène Fleming",
   "Butiquim da Fábrica · Juiz de Fora",
-  "Festas particulares em BH e no Rio",
 ];
 
 const fotos = [
@@ -74,7 +73,7 @@ const fotos = [
 
 const videos = [
   { src: "/videos/VideoTheBridgePub-1.mp4", poster: undefined, titulo: "Trecho “Don’t Let Me Down”", local: "The Bridge Pub, BH" },
-  { src: "/videos/Video_Sirene.mp4", poster: "/videos/Video_Sirene-poster.jpg", titulo: "Trecho “Heart of Gold”", local: "Sirène Fleming, BH" },
+  { src: "/videos/Inox_ShesElectric.mp4", poster: "/videos/Inox_ShesElectric-poster.jpg", titulo: "“She’s Electric” (Oasis cover)", local: "Os Inoxidáveis" },
 ];
 
 // Quando tiver depoimentos reais, preencha aqui. Com a lista vazia, a seção não aparece.
@@ -105,7 +104,7 @@ export default function ContratarPage() {
           de Boteco
         </h1>
         <p className={styles.lead}>
-          Rodrigo Tavares, cantor, compositor e instrumentista. Pop rock brasileiro e internacional dos anos 1970 aos
+          Rodrigo Tavares, cantor, compositor e instrumentista. Pop rock nacional e internacional dos anos 1970 aos
           2000, para bares, casas de show, festas particulares e eventos.
         </p>
         <p className={styles.meta}>Belo Horizonte, MG · mais de 20 anos de estrada</p>
@@ -173,7 +172,7 @@ export default function ContratarPage() {
             de Fora (MG), na banda Etanoise, onde assinou composições do primeiro disco do grupo.
           </p>
           <p className={styles.muted}>
-            Desde 2006 vive e toca em Belo Horizonte. Passou pela banda indie Radiotape e assumiu baixo e voz no
+            Desde 2006 vive e toca em Belo Horizonte. Passou pela banda Radiotape e assumiu baixo e voz no
             Cevada Blues. Em 2008 criou com Rafael Oliveira o duo Os Inoxidáveis, revisitando clássicos da música
             brasileira e internacional com roupagem própria.
           </p>
@@ -246,7 +245,7 @@ export default function ContratarPage() {
         </a>
       </section>
     </div>
-    <Footer />
+    <Footer showSocial />
     </>
   );
 }
