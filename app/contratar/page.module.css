@@ -211,6 +211,50 @@
   color: var(--text-muted, #a79c87);
 }
 
+.quote blockquote {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.quoteAuthor {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border, #332c22);
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.4;
+}
+
+.authorName {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text, #f3ecdd);
+}
+
+.authorHandle {
+  color: var(--accent, #e8a33d);
+  text-decoration: none;
+}
+
+.authorHandle:hover {
+  text-decoration: underline;
+  color: var(--accent, #e8a33d);
+}
+
 /* RELEASE */
 .release {
   display: flex;
