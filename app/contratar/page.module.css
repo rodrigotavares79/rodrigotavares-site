@@ -246,6 +246,18 @@
   gap: 20px;
 }
 
+@media (hover: hover) {
+  .plan {
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .plan:hover {
+    background: var(--surface-raised, #262019);
+    border-color: var(--accent, #e8a33d);
+    transform: translateY(-4px);
+  }
+}
+
 .planHead {
   display: flex;
   flex-direction: column;
