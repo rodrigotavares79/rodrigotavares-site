@@ -138,8 +138,23 @@ const perguntas = [
 ];
 
 // Quando tiver depoimentos reais, preencha aqui. Com a lista vazia, a seção não aparece.
-const depoimentos: { texto: string; nome: string; local: string }[] = [
-  // { texto: "O show foi incrível...", nome: "Fulano", local: "The Bridge Pub" },
+const depoimentos = [
+  {
+    texto:
+      "A relação do Butiquim da Fábrica com o músico Rodrigo Tavares não é de hoje. O músico já se apresentou com banda no finado Bar da Fábrica, em meados dos anos de 2015 e novamente é comprovada a sua responsabilidade e dedicação com o trabalho feito! Carismático, sua interação com o público é um show à parte! Um repertório que não deixa ninguém ficar parado! Que essa parceria continue rendendo bons frutos!",
+    nome: "Lívia Machado",
+    local: "Gerente do Butiquim da Fábrica, Juiz de Fora",
+    instagram: "butiquimdafabricajf",
+    foto: "/gallery/depoimento-butiquim-da-fabrica.jpg",
+  },
+  {
+    texto:
+      "Acompanho o trabalho do Rodrigo há bastante tempo e já assisti a vários shows dele. Com seu grande conhecimento musical, ele tem uma facilidade incrível para adaptar o setlist. Vai do rock internacional — com um inglês impecável, por sinal — aos clássicos do rock nacional dos anos 70, 80 e 90. Além de tudo, é um músico de altíssima qualidade!",
+    nome: "Tarcísio Portes",
+    local: "Público",
+    instagram: "tmportes_paz",
+    foto: "/gallery/depoimento-tarcisio-portes.jpg",
+  },
 ];
 
 function IconeWhatsApp() {
@@ -211,13 +226,26 @@ export default function ContratarPage() {
       {depoimentos.length > 0 && (
         <section className={styles.section}>
           <span className={styles.eyebrow}>Depoimentos</span>
-          <h2 className={styles.h2}>Quem já contratou</h2>
+          <h2 className={styles.h2}>Quem já viu o show</h2>
           <div className={styles.cards3}>
             {depoimentos.map((d) => (
               <figure key={d.nome} className={styles.quote}>
                 <blockquote>“{d.texto}”</blockquote>
-                <figcaption>
-                  {d.nome} — {d.local}
+                <figcaption className={styles.quoteAuthor}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={d.foto} alt={d.nome} className={styles.avatar} width={48} height={48} loading="lazy" />
+                  <span className={styles.authorInfo}>
+                    <strong className={styles.authorName}>{d.nome}</strong>
+                    <span>{d.local}</span>
+                    <a
+                      href={`https://www.instagram.com/${d.instagram}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.authorHandle}
+                    >
+                      @{d.instagram}
+                    </a>
+                  </span>
                 </figcaption>
               </figure>
             ))}
