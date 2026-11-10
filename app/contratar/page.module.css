@@ -641,12 +641,14 @@
   list-style: none;
   margin: 16px 0 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
 }
 
 .logoTile {
+  flex: 0 0 calc((100% - 3 * 14px) / 4);
   aspect-ratio: 3 / 2;
   border-radius: 4px;
   background: #2c303c;
@@ -679,7 +681,7 @@
 }
 
 @media (max-width: 40rem) {
-  .logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .logoTile {
+    flex-basis: calc((100% - 14px) / 2);
   }
 }
