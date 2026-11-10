@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
+import Carousel, { Slide } from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import styles from "./page.module.css";
 
@@ -77,20 +79,26 @@ const planos = [
   },
 ];
 
-const palcos = [
-  "The Bridge Pub",
-  "Jack Rock Bar",
-  "100% Malte",
-  "StoneHenge",
-  "Underground Pub",
-  "Sirène Fleming",
-  "Butiquim da Fábrica · Juiz de Fora",
+// Fonte dos títulos das seções (pesada, no estilo do logo)
+const titulo = Montserrat({ subsets: ["latin"], weight: ["800", "900"], variable: "--font-titulo", display: "swap" });
+
+// Logos das casas. Sem logo, a casa aparece só com o nome.
+const palcos: { nome: string; logo?: string }[] = [
+  { nome: "The Bridge Pub", logo: "/gallery/logo-the-bridge-pub.png" },
+  { nome: "Jack Rock Bar", logo: "/gallery/logo-jack-rock-bar.png" },
+  { nome: "100% Malte", logo: "/gallery/logo-100-malte.png" },
+  { nome: "Stonehenge Rock Bar", logo: "/gallery/logo-stonehenge.png" },
+  { nome: "Sirène Fleming", logo: "/gallery/logo-sirene-fleming.png" },
+  { nome: "Butiquim da Fábrica", logo: "/gallery/logo-butiquim-da-fabrica.png" },
+  { nome: "Underground Pub" },
 ];
 
-const fotos = [
-  { src: "/gallery/Rodrigo-4.jpg", alt: "Rodrigo Tavares" },
-  { src: "/gallery/Rodrigo-2.jpg", alt: "Retrato de Rodrigo Tavares" },
-  { src: "/gallery/TheBridgePub-1.jpeg", alt: "Show no The Bridge Pub" },
+const fotos: Slide[] = [
+  { src: "/gallery/Rodrigo-4.jpg", label: "Rodrigo Tavares" },
+  { src: "/gallery/Rodrigo-2.jpg", label: "Rodrigo Tavares" },
+  { src: "/gallery/TheBridgePub-1.jpeg", label: "Show no The Bridge Pub", caption: "The Bridge Pub, BH", fit: "contain" },
+  { src: "/gallery/DaPlateia-Sirene_Fleming-02.jpeg", label: "Show no Sirène Fleming", caption: "Sirène Fleming, BH" },
+  { src: "/gallery/DaPlateia-Festa_Particular-06.jpg", label: "Festa particular", caption: "Festa particular, BH" },
 ];
 
 const videos = [
@@ -170,7 +178,7 @@ export default function ContratarPage() {
 
   return (
     <>
-    <div className={styles.page}>
+    <div className={`${styles.page} ${titulo.variable}`}>
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroText}>
@@ -201,22 +209,24 @@ export default function ContratarPage() {
 
       {/* GALERIA */}
       <section>
-        <div className={styles.gallery}>
-          {fotos.map((f) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={f.src} src={f.src} alt={f.alt} className={styles.photo} loading="lazy" />
-          ))}
+        <div className={styles.carouselBox}>
+          <Carousel slides={fotos} autoplayMs={4500} />
         </div>
-        <p className={styles.credit}>Fotos: @thiagolemosc</p>
+        <p className={styles.credit}>Fotos: @thiagolemosc e público</p>
       </section>
 
       {/* PALCOS */}
       <section className={styles.section}>
         <span className={styles.eyebrow}>Palcos por onde passou</span>
-        <ul className={styles.chips}>
+        <ul className={styles.logos}>
           {palcos.map((p) => (
-            <li key={p} className={styles.chip}>
-              {p}
+            <li key={p.nome} className={styles.logoTile} title={p.nome}>
+              {p.logo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={p.logo} alt={p.nome} loading="lazy" />
+              ) : (
+                <span className={styles.logoName}>{p.nome}</span>
+              )}
             </li>
           ))}
         </ul>
