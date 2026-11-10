@@ -97,8 +97,6 @@ const fotos: Slide[] = [
   { src: "/gallery/Rodrigo-4.jpg", label: "Rodrigo Tavares" },
   { src: "/gallery/Rodrigo-2.jpg", label: "Rodrigo Tavares" },
   { src: "/gallery/TheBridgePub-1.jpeg", label: "Show no The Bridge Pub", caption: "The Bridge Pub, BH", fit: "contain" },
-  { src: "/gallery/DaPlateia-Sirene_Fleming-02.jpeg", label: "Show no Sirène Fleming", caption: "Sirène Fleming, BH" },
-  { src: "/gallery/DaPlateia-Festa_Particular-06.jpg", label: "Festa particular", caption: "Festa particular, BH" },
 ];
 
 const videos = [
@@ -373,7 +371,7 @@ export default function ContratarPage() {
         <h2 className={styles.h2}>Antes de fechar</h2>
         <div className={styles.faq}>
           {perguntas.map((q) => (
-            <details key={q.pergunta} className={styles.faqItem}>
+            <details key={q.pergunta} name="faq" className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{q.pergunta}</summary>
               <p className={styles.faqAnswer}>{q.resposta}</p>
             </details>
@@ -395,6 +393,7 @@ export default function ContratarPage() {
       WhatsApp
     </a>
     <Footer showSocial />
+    <div className={styles.floatSpacer} aria-hidden="true" />
     </>
   );
 }
