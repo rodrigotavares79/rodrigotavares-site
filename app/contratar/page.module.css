@@ -3,7 +3,7 @@
 .page {
   max-width: var(--max-width, 72rem);
   margin: 0 auto;
-  padding: 0 24px 40px;
+  padding: 0 24px 8px;
   color: var(--text, #f3ecdd);
   font-family: var(--font-body);
   font-size: 17px;
@@ -63,11 +63,11 @@
 
 .heroTitle {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(48px, 7.5vw, 104px);
-  line-height: 0.95;
-  letter-spacing: 0.01em;
+  font-family: var(--font-titulo), var(--font-display);
+  font-weight: 900;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1;
+  letter-spacing: -0.015em;
   text-transform: uppercase;
 }
 
@@ -438,7 +438,7 @@
 /* CELULAR: espaçamentos menores */
 @media (max-width: 40rem) {
   .page {
-    padding: 0 16px 32px;
+    padding: 0 16px 8px;
   }
 
   .hero {
@@ -566,8 +566,8 @@
     color: #0b1f12;
   }
 
-  .page {
-    padding-bottom: 88px;
+  .floatSpacer {
+    height: 76px;
   }
 }
 
