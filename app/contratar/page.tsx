@@ -161,6 +161,14 @@ const depoimentos = [
     instagram: "tmportes_paz",
     foto: "/gallery/depoimento-tarcisio-portes.jpg",
   },
+  {
+    texto:
+      "Um talentoso cantor que apresenta vários estilos durante o show. Rock clássico, nacionais e muita música boa. Recomendo para seu evento ou festa! Vale o momento, valem as músicas!",
+    nome: "Luís Eduardo",
+    local: "Contratante · Evento particular, Belo Horizonte",
+    instagram: "lessmkt",
+    foto: "/gallery/depoimento-luis-eduardo.jpg",
+  },
 ];
 
 function IconeWhatsApp() {
@@ -235,7 +243,7 @@ export default function ContratarPage() {
         <section className={styles.section}>
           <span className={styles.eyebrow}>Depoimentos</span>
           <h2 className={styles.h2}>Quem já viu o show</h2>
-          <div className={styles.cards3}>
+          <div className={styles.quotes}>
             {depoimentos.map((d) => (
               <figure key={d.nome} className={styles.quote}>
                 <blockquote>“{d.texto}”</blockquote>
