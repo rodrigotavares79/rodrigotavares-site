@@ -183,6 +183,44 @@
 }
 
 /* DEPOIMENTOS */
+/* Desktop: os três lado a lado. Celular/tablet: rolagem lateral, um card por vez com a ponta do próximo aparecendo. */
+.quotes {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 56rem) {
+  .quotes {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    margin-inline: -24px;
+    padding: 0 24px 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .quotes::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quotes > .quote {
+    flex: 0 0 min(84%, 380px);
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 40rem) {
+  .quotes {
+    scroll-padding-inline: 16px;
+    margin-inline: -16px;
+    padding: 0 16px 6px;
+  }
+}
+
 .cards3 {
   margin-top: 20px;
   display: grid;
